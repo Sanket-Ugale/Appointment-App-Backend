@@ -1,0 +1,18 @@
+# Use an official Golang runtime as a parent image
+FROM golang:1.18
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . .
+
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
+
+# Define environment variable
+ENV PORT=8080
+
+# Run main.go when the container launches
+CMD ["go", "run", "main.go"]
+
